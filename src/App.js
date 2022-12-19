@@ -1,24 +1,21 @@
+import React from 'react';
 import './App.css';
-import useContentful from './useContentful.js';
-import { useEffect, useState } from 'react';
-import FlowerCard from './flowerCard';
+import Navbar from '../src/NavBar';
+import { BrowserRouter as Router, Routes, Route }
+  from 'react-router-dom';
+
+import Flowers from './Flowers';
+import Animals from './Animals';
 
 function App() {
-  const { getFlowers } = useContentful();
-
-  const [flowers, setflowers] = useState([]);
-
-  useEffect(() => {
-    getFlowers().then((response) => setflowers(response))
-
-  })
   return (
-    <div className="App">
-      <h1>Flowers</h1>
-      {flowers.map((flower, index) => (
-        <FlowerCard key={index} flower={flower} />
-      ))}
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route exact path='/flowers' exact element={<Flowers />} />
+        <Route path='/animals' element={<Animals />} />
+      </Routes>
+    </Router>
   );
 }
 export default App;

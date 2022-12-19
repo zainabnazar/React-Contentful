@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-const FlowerCard = ({ flower }) => {
-  return (
-    <Wrapper background={flower.photo.file.url}>
-      <TextContainer>
-        <Title>{flower.name}</Title>
-      </TextContainer>
-    </Wrapper>
-  );
+const AnimalCard = ({ animal }) => {
+    return (
+        <Wrapper background={animal.photo.file.url}>
+            <TextContainer>
+                <Title>{animal.name}</Title>
+            </TextContainer>
+        </Wrapper>
+    );
 };
 
-export default FlowerCard;
+export default AnimalCard;
 
 const Wrapper = styled.div`
   display: grid;
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   box-shadow: 0px 20px 40px rgba(52, 53, 99, 0.2),
     0px 1px 3px rgba(0, 0, 0, 0.05);
   background: ${(props) =>
-    props.background && `url(${props.background}) center no-repeat`};
+        props.background && `url(${props.background}) center no-repeat`};
 `;
 
 const TextContainer = styled.div`

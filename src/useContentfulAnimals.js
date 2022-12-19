@@ -1,18 +1,16 @@
 import { createClient } from 'contentful';
 import React from "react";
 
-
-const useContentful = () => {
+const useContentfulAnimals = () => {
     const client = createClient({
         space: process.env.REACT_APP_API_SPACE_ID,
         accessToken: process.env.REACT_APP_API_TOKEN,
         host: process.env.REACT_APP_HOST
     });
-
-    const getFlowers = async () => {
+    const getAnimals = async () => {
         try {
             const res = await client.getEntries({
-                content_type: "flowers",
+                content_type: "animal",
                 select: "fields"
             })
             const filterRes = res.items.map((item) => {
@@ -23,12 +21,11 @@ const useContentful = () => {
                 }
             })
             return filterRes;
-
+            console.log(filterRes);
         } catch (error) {
-            console.log('Error fetching contentful data', error);
+            console.log("Error fetching contentful data", error);
         }
     };
-    return { getFlowers };
+    return { getAnimals };
 }
-
-export default useContentful;
+export default useContentfulAnimals;
