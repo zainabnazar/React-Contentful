@@ -14,7 +14,7 @@ function Flowers() {
 
     })
     return (
-        <div className="App">
+        <div data-cy='App' className="App">
             <h1>Flowers</h1>
             {flowers.map((flower, index) => (
                 <FlowerCard key={index} flower={flower} />
