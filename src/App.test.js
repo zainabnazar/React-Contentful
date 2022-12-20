@@ -8,9 +8,9 @@ it("renders without crashing", () => {
   render(<App />);
 });
 
-it("renders with checking the screen element", () => {
+it("renders with checking the flower element", () => {
   render(<App />);
-  const linkElement = screen.getAllByText(/Flowers/i);
-  expect(linkElement[0]).toBeInTheDocument();
+  const flowerElement = screen.getAllByText(/Flowers/i);
+  expect(flowerElement[0]).toBeInTheDocument();
 });
 

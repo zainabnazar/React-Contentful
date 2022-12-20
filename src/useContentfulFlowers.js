@@ -23,7 +23,7 @@ const useContentfulFlowers = () => {
                 }
             })
             return filterRes;
-            console.log(filterRes);
+
 
         } catch (error) {
             console.log('Error fetching contentful data', error);
