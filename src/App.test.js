@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Router } from 'react-router-dom';
 import App from './App';
 
-test('renders learn react link', () => {
+
+it("renders without crashing", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
 });
+
+it("renders with checking the screen element", () => {
+  render(<App />);
+  const linkElement = screen.getAllByText(/Flowers/i);
+  expect(linkElement[0]).toBeInTheDocument();
+});
+

@@ -11,8 +11,8 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route exact path='/flowers' exact element={<Flowers />} />
+      <Routes className="Flowers">
+        <Route exact path='/' exact element={<Flowers />} />
         <Route path='/animals' element={<Animals />} />
       </Routes>
     </Router>
