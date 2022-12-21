@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Animals from './Animals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

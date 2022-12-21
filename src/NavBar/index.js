@@ -13,6 +13,9 @@ const Navbar = () => {
                     <NavLink to="/animals" activeStyle>
                         Animals
           </NavLink>
+                    <NavLink to="/api" activeStyle>
+                        API
+          </NavLink>
                 </NavMenu>
             </Nav>
         </>

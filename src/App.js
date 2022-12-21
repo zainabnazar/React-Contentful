@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route }
 
 import Flowers from './Flowers';
 import Animals from './Animals';
+import Api from './Api';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes className="Flowers">
         <Route exact path='/' exact element={<Flowers />} />
         <Route path='/animals' element={<Animals />} />
+        <Route path='/api' element={<Api />} />
       </Routes>
     </Router>
   );
