@@ -16,6 +16,9 @@ const Navbar = () => {
                     <NavLink to="/api" activeStyle>
                         API
           </NavLink>
+                    <NavLink to="/apifetch" activeStyle>
+                        API Fetch
+          </NavLink>
                 </NavMenu>
             </Nav>
         </>

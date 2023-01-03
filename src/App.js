@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route }
 import Flowers from './Flowers';
 import Animals from './Animals';
 import Api from './Api';
+import ApiFetch from './ApiFetch';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/' exact element={<Flowers />} />
         <Route path='/animals' element={<Animals />} />
         <Route path='/api' element={<Api />} />
+        <Route path='/apifetch' element={<ApiFetch />} />
       </Routes>
     </Router>
   );
