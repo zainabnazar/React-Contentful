@@ -6,25 +6,17 @@ function ApiFetch() {
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
 
-    const handleChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleAgeChange = (e) => {
-        setAge(e.target.value);
-    };
+    const user = { name, age };
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             let res = await fetch("https://63b58eee0f49ecf508a90829.mockapi.io/names", {
                 method: "POST",
-                body: JSON.stringify({
-                    name: name,
-                    age: age,
-                }),
+                headers: { "content-Type": "application/json" },
+                body: JSON.stringify(user),
             });
-            console.log("response", await res.json());
             let resJson = await res.json();
+            console.log('RES', resJson);
             if (res.status === 200) {
                 setName("");
                 setAge("");
@@ -47,7 +39,7 @@ function ApiFetch() {
                     type="text"
                     value={name}
                     required
-                    onChange={(e) => { handleChange(e) }}
+                    onChange={(e) => setName(e.target.value)}
                 /><br />
                 <label >
                     Age:
@@ -56,7 +48,7 @@ function ApiFetch() {
                     type="text"
                     value={age}
                     required
-                    onChange={(e) => { handleAgeChange(e) }}
+                    onChange={(e) => setAge(e.target.value)}
                 /><br />
                 <input
                     type="submit"
