@@ -16,7 +16,7 @@ function ApiFetch() {
                 body: JSON.stringify(user),
             });
             let resJson = await res.json();
-            console.log('RES', resJson);
+
             if (res.status === 200) {
                 setName("");
                 setAge("");
@@ -31,11 +31,12 @@ function ApiFetch() {
         <div>
             <h1>Api Fetch and Post Data</h1>
 
-            <form onSubmit={(e) => { handleSubmit(e) }}>
+            <form id="user" onSubmit={(e) => { handleSubmit(e) }}>
                 <label >
                     Name:
         </label><br />
                 <input
+                    name="name"
                     type="text"
                     value={name}
                     required
@@ -45,6 +46,7 @@ function ApiFetch() {
                     Age:
         </label><br />
                 <input
+                    name="age"
                     type="text"
                     value={age}
                     required
