@@ -11,7 +11,7 @@ function Animals() {
 
     useEffect(() => {
         getAnimals().then((response) => setAnimals(response))
-    })
+    }, []);
 
     return (
         <div className="App">

@@ -12,7 +12,7 @@ function Flowers() {
     useEffect(() => {
         getFlowers().then((response) => setflowers(response))
 
-    })
+    }, []);
     return (
         <div data-cy='App' className="App">
             <h1>Flowers</h1>
